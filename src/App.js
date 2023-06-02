@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import { RecoilRoot } from 'recoil'
+import { RedStripe } from './RedStripe'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import './App.css';
+import { BlueStripe } from './BlueStripe'
+import { GreenStripe } from './GreenStripe'
+const queryClient = new QueryClient()
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <div className = "App">
+    REACT III
+    <QueryClientProvider client = { queryClient }>
+          <RecoilRoot>
+                <RedStripe />
+                <BlueStripe />
+                <GreenStripe />
+            </RecoilRoot>
+    </QueryClientProvider>
     </div>
-  );
+  )
 }
 
 export default App;
